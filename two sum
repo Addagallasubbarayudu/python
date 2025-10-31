@@ -1,0 +1,18 @@
+class Solution:
+    def twoSum(self, nums, target):
+        # Dictionary to store the number and its index
+        hashmap = {}
+        
+        # Iterate over the list
+        for i, num in enumerate(nums):
+            complement = target - num
+            
+            # Check if the complement exists in the hashmap
+            if complement in hashmap:
+                return [hashmap[complement], i]
+            
+            # Otherwise, store the number and its index
+            hashmap[num] = i
+        
+        # If no solution is found (though per problem statement, one solution always exists)
+        return []
